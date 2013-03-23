@@ -1,16 +1,21 @@
-import os
+#all the imports
+import sqlite3
+from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
 
-from flask import Flask
+# configuration
+DATABASE = '/tmp/flaskr.db'
+DEBUG = True
+SECRET_KEY = 'Some Development Key'
+USERNAME = 'admin'
+PASSWORD = 'default'
 
+# create our little application :)
 app = Flask(__name__)
+app.config.from_object(__name__)
 
-@app.route('/')
-def hello():
-    return 'Hello World!'
+def connect_db():
+    return sqlite3.connect(app.config['DATABASE'])
 
 if __name__ == '__main__':
-    # Bind to PORT if defined, else default to 5000.
-    port = int(os.environ.get('PORT', 5000))
-
-    # Run the app.
-    app.run(host='0.0.0.0', port=port)
+    print "DATABASE = " + app.config['DATABASE']
+    app.run()
