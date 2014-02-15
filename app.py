@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     print "Printing hello world!"
-    return 'Hi World!'
+    return 'Hello World!'
 
 if __name__ == '__main__':
     # Bind to PORT if defined, else default to 5000.
