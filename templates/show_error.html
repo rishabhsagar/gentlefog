@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% if error %}
+        <h2>{{ error.code }}</h2>
+        <hr>
+        <p>{{ error.summary }}</p>
+    {% else %}
+        <h2>Something went wrong :( </h2>
+    {% endif %}
+    <hr>
+    <p>Go back and try another link</p>
+{% endblock %}

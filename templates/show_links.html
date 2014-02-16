@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>List of internal wiki links from {{ title }}</h2>
+    <ul>
+        {% for link in list_of_links %}
+        <li>{{ link }} <a href="{{ root }}{{ link }}">[explore]</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
