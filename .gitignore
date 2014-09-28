@@ -38,3 +38,6 @@ nosetests.xml
 
 # Adding editor swap files
 *.swp
+
+# mac .ds_store
+.DS_Store
